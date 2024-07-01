@@ -1,0 +1,11 @@
+defaults:
+  - temos
+  - _self_
+
+_target_: clatr.src.models.clatr.CLaTr
+
+temperature: 0.1
+threshold_selfsim: 0.995 # 0.99 = 2 * 0.995 - 1
+threshold_selfsim_metrics: 0.995 # 0.99 = 2 * 0.995 - 1
+checkpoint_path: checkpoints/clatr-e100.ckpt
+device: ${compnode.device}

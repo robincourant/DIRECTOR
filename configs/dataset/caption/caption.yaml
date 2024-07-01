@@ -1,0 +1,14 @@
+_target_: src.datasets.modalities.caption_dataset.CaptionDataset
+
+name: caption
+
+dataset_dir: ${dataset.dataset_dir}
+segment_dir: ${dataset.dataset_dir}/cam_segments
+raw_caption_dir: ${dataset.dataset_dir}/caption
+feat_caption_dir: ${dataset.dataset_dir}/caption_clip
+
+num_segments: 27
+num_feats: 512
+num_cams: ${dataset.standardization.num_cams}
+sequential: ${diffuser.network.module.clip_sequential}
+max_feat_length: 77

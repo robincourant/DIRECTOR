@@ -1,0 +1,36 @@
+_target_: clatr.src.models.temos.TEMOS
+
+name: temos
+vae: true
+
+traj_encoder:
+  _target_: clatr.src.models.actor.ACTORStyleEncoder
+  num_feats: 9
+  vae: true
+  latent_dim: 256
+  ff_size: 1024
+  num_layers: 6
+  num_heads: 4
+  dropout: 0.1
+  activation: gelu
+
+text_encoder:
+  _target_: clatr.src.models.actor.ACTORStyleEncoder
+  num_feats: 512
+  vae: true
+  latent_dim: 256
+  ff_size: 1024
+  num_layers: 6
+  num_heads: 4
+  dropout: 0.1
+  activation: gelu
+
+traj_decoder:
+  _target_: clatr.src.models.actor.ACTORStyleDecoder
+  num_feats: 9
+  latent_dim: 256
+  ff_size: 1024
+  num_layers: 6
+  num_heads: 4
+  dropout: 0.1
+  activation: gelu

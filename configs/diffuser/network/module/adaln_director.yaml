@@ -1,0 +1,16 @@
+_target_: src.models.modules.director.AdaLNDirector
+name: adaln_director
+num_feats: ${dataset.num_feats}
+num_rawfeats: ${dataset.num_rawfeats}
+num_cams: ${dataset.num_cams}
+num_cond_feats: ${dataset.num_cond_feats}
+latent_dim: 512
+mlp_multiplier: 4
+num_layers: 8
+num_heads: 16
+dropout: 0.1
+stochastic_depth: 0.1
+label_dropout: 0.1
+clip_sequential: False
+cond_sequential: False
+device: ${compnode.device}

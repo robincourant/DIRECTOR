@@ -1,0 +1,7 @@
+_target_: src.models.networks.EDMPrecond
+
+defaults:
+  - module: ca_director
+
+name: director
+sigma_data: 0.5

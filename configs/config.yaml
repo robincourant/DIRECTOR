@@ -1,0 +1,38 @@
+defaults:
+  - _self_
+  - dataset: traj+caption+char
+  - diffuser: director_edm
+  - compnode: 2g_1n
+
+timestamp: ${now:%Y-%m-%d-%H-%M-%S}
+
+outdir: null
+entity: null
+project_name: trajectory-diffusion
+results_dir: ./results
+data_dir: ./et-data
+xp_name: ${diffuser.loss.name}-${diffuser.network.module.name}-${dataset.trajectory.set_name}-${dataset.name}
+metric_dir: ./metrics
+log_dir: ${results_dir}/${xp_name}/${timestamp}
+checkpoint_path: null
+
+seed: 42
+save_and_sample_every: 10
+num_train_epochs: 4001
+log_wandb: true
+batch_size: 64
+
+trainer:
+  _partial_: true
+  _target_: lightning.Trainer
+  accelerator: cuda
+  strategy: auto
+  devices: ${compnode.num_gpus}
+  max_epochs: ${num_train_epochs}
+  precision: 16-mixed
+  check_val_every_n_epoch: 30
+  num_sanity_val_steps: 0
+
+hydra:
+  run:
+    dir: ./${results_dir}/${xp_name}/${timestamp}

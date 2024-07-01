@@ -1,0 +1,3 @@
+device: mps
+num_gpus: 1
+num_workers: 8

@@ -1,0 +1,12 @@
+_target_: src.datasets.modalities.char_dataset.CharacterDataset
+
+name: char
+dataset_dir: ${dataset.dataset_dir}
+standardize: ${dataset.trajectory.standardize}
+standardization: ${dataset.standardization}
+num_feats: ${eval:'3 if ${dataset.char.sequential} else ${dataset.num_cams} * 3'}
+num_cams: ${dataset.num_cams}
+sequential: ${diffuser.network.module.cond_sequential}
+num_vertices: null
+num_faces: null
+load_vertices: false

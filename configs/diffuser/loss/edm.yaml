@@ -1,0 +1,6 @@
+_target_: src.training.losses.edm.EDMLoss
+
+name: edm
+P_mean: -1.2
+P_std: 1.2
+sigma_data: ${diffuser.network.sigma_data}

@@ -1,0 +1,15 @@
+bpy
+einops
+ema_pytorch
+evo
+gdown
+gradio
+hydra-core
+lightning
+matplotlib==3.7.1
+rich
+scikit-learn
+scipy
+torchtyping
+wandb
+rerun-sdk==0.15.1

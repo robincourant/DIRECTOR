@@ -1,0 +1,17 @@
+_target_: src.datasets.multimodal_dataset.MultimodalDataset
+
+defaults:
+  - _self_
+  - trajectory: rot6d_trajectory
+  - caption: caption
+  - standardization: '0300'
+
+name: "${dataset.standardization.name}-t:${dataset.trajectory.name}-c:${dataset.caption.name}"
+dataset_name: ${dataset.standardization.name}
+dataset_dir: ${data_dir}
+
+num_rawfeats: 12
+num_cams: ${dataset.standardization.num_cams}
+feature_type: ${dataset.trajectory.name}
+num_feats: ${dataset.trajectory.num_feats}
+num_cond_feats: ['${dataset.caption.num_feats}']

@@ -1,0 +1,3 @@
+device: cpu
+num_gpus: 0
+num_workers: 8

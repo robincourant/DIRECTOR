@@ -1,0 +1,26 @@
+defaults:
+  - dataset: traj+caption+char
+  - diffuser: director_edm
+  - compnode: cpu
+  - _self_
+
+timestamp: ${now:%Y-%m-%d-%H-%M-%S}
+
+outdir: null
+entity: null
+project_name: trajectory-diffusion
+results_dir: ./results
+data_dir: ./et-data
+xp_name: ${diffuser.loss.name}-${diffuser.network.module.name}-${dataset.name}
+log_dir: ${results_dir}/${xp_name}/${timestamp}
+checkpoint_path: checkpoints/director/ca-mixed-e449.ckpt
+
+seed: 42
+save_and_sample_every: 10
+num_train_epochs: 1001
+log_wandb: true
+batch_size: 128
+
+hydra:
+  run:
+    dir: ./${results_dir}/${xp_name}/${timestamp}
