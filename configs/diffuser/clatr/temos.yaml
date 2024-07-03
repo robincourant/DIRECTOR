@@ -2,6 +2,7 @@ _target_: clatr.src.models.temos.TEMOS
 
 name: temos
 vae: true
+sample_mean: true
 
 traj_encoder:
   _target_: clatr.src.models.actor.ACTORStyleEncoder
