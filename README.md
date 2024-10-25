@@ -31,6 +31,12 @@
 
 ---
 
+## News
+
+📢 **25/Oct/24** - Released [SMPL-H files](https://huggingface.co/datasets/robin-courant/et-data/blob/main/smplh.tar.gz) for the mixed dataset.
+
+<br>
+
 ## Getting started
 
 <details><summary>Create environment</summary>
